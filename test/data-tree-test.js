@@ -14,6 +14,21 @@ exports.tree = {
 		t.done();
 	},
 
+	'walk delimiter' : function (t) {
+		var tree = DataTree.create();
+		var root = tree.getRoot();
+
+		tree.delimiter = '/';
+
+		tree.addValue('some/nested/item', 0);
+		tree.addValue('some/other/deeper/item', 1);
+
+		t.equal(root.some.nested.item, 0);
+		t.equal(root.some.other.deeper.item, 1);
+
+		t.done();
+	},
+
 	'implicit array' : function (t) {
 		var tree = DataTree.create();
 		var root = tree.getRoot();

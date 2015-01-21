@@ -38,6 +38,8 @@ exports.tree = {
 		tree.addValue(key, 1);
 		tree.addValue(key, 2);
 
+		t.ok(Array.isArray(root.some.array.path));
+
 		t.equal(root.some.array.path[0], 0);
 		t.equal(root.some.array.path[1], 1);
 		t.equal(root.some.array.path[2], 2);
@@ -52,6 +54,8 @@ exports.tree = {
 		tree.addValue('item.0', 0);
 		tree.addValue('item.1', 1);
 		tree.addValue('item.2', 2);
+
+		t.ok(Array.isArray(root.item));
 
 		t.equal(root.item[0], 0);
 		t.equal(root.item[1], 1);
@@ -71,6 +75,10 @@ exports.tree = {
 		tree.addValue('item.1.0', 3);
 		tree.addValue('item.1.1', 4);
 		tree.addValue('item.1.2', 5);
+
+		t.ok(Array.isArray(root.item));
+		t.ok(Array.isArray(root.item[0]));
+		t.ok(Array.isArray(root.item[1]));
 
 		t.equal(root.item[0][0], 0);
 		t.equal(root.item[0][1], 1);

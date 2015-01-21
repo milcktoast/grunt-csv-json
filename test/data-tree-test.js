@@ -14,7 +14,7 @@ exports.tree = {
 		t.done();
 	},
 
-	'add array values' : function (t) {
+	'implicit array' : function (t) {
 		var tree = DataTree.create();
 		var root = tree.getRoot();
 		var key = 'some.array.path';
@@ -26,6 +26,44 @@ exports.tree = {
 		t.equal(root.some.array.path[0], 0);
 		t.equal(root.some.array.path[1], 1);
 		t.equal(root.some.array.path[2], 2);
+
+		t.done();
+	},
+
+	'explicit array' : function (t) {
+		var tree = DataTree.create();
+		var root = tree.getRoot();
+
+		tree.addValue('item.0', 0);
+		tree.addValue('item.1', 1);
+		tree.addValue('item.2', 2);
+
+		t.equal(root.item[0], 0);
+		t.equal(root.item[1], 1);
+		t.equal(root.item[2], 2);
+
+		t.done();
+	},
+
+	'explicit nested array' : function (t) {
+		var tree = DataTree.create();
+		var root = tree.getRoot();
+
+		tree.addValue('item.0.0', 0);
+		tree.addValue('item.0.1', 1);
+		tree.addValue('item.0.2', 2);
+
+		tree.addValue('item.1.0', 3);
+		tree.addValue('item.1.1', 4);
+		tree.addValue('item.1.2', 5);
+
+		t.equal(root.item[0][0], 0);
+		t.equal(root.item[0][1], 1);
+		t.equal(root.item[0][2], 2);
+
+		t.equal(root.item[1][0], 3);
+		t.equal(root.item[1][1], 4);
+		t.equal(root.item[1][2], 5);
 
 		t.done();
 	}

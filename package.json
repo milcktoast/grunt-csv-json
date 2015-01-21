@@ -1,8 +1,17 @@
 {
   "name": "grunt-csv-json",
-  "description": "'Generate static JSON from CSV data'",
+  "description": "Generate static JSON from CSV data",
   "version": "0.0.1",
   "main": "Gruntfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jpweeks/grunt-csv-json.git"
+  },
+  "author": {
+    "name": "Jay Weeks",
+    "email": "jay.patrick.weeks@gmail.com",
+    "url": "http://jayweeks.com"
+  },
   "engines": {
     "node": ">= 0.8.0"
   },

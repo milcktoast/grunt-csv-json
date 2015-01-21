@@ -48,6 +48,7 @@ Object hierarchy is expressed with dot notation in the key.
 
 The following data:
 
+| key         | value |
 | ----------- | ----- |
 | person.name | Bob   |
 | person.sex  | male  |
@@ -71,6 +72,7 @@ Arrays of values can be implicitly defined by duplicating keys.
 
 The following data:
 
+| key           | value   |
 | ------------- | ------- |
 | shopping.day  | Sunday  |
 | shopping.list | fruit   |
@@ -95,6 +97,7 @@ Arrays of values can be explicitly defined by using integer keys.
 
 The following data:
 
+| key       | value   |
 | --------- | ------- |
 | list.0.0  | fruit   |
 | list.0.1  | candy   |

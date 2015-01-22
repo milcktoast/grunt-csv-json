@@ -5,12 +5,12 @@ exports.doc = {
 		var doc = CsvDoc.create();
 		var data = doc.formatRows([
 			['key', 'resource'],
-			['a', 'one'],
-			['b', 'two']
+			['key-one', 'one'],
+			['key-two', 'two']
 		]);
 
 		t.deepEqual(data.names, ['resource']);
-		t.deepEqual(data.keys, ['a', 'b']);
+		t.deepEqual(data.keys, ['key-one', 'key-two']);
 		t.deepEqual(data.sets, [['one', 'two']]);
 
 		t.done();
@@ -20,12 +20,12 @@ exports.doc = {
 		var doc = CsvDoc.create();
 		var data = doc.formatRows([
 			['key', 'resource-a', 'resource-b'],
-			['a', 'one-a', 'one-b'],
-			['b', 'two-a', 'two-b']
+			['key-one', 'one-a', 'one-b'],
+			['key-two', 'two-a', 'two-b']
 		]);
 
 		t.deepEqual(data.names, ['resource-a', 'resource-b']);
-		t.deepEqual(data.keys, ['a', 'b']);
+		t.deepEqual(data.keys, ['key-one', 'key-two']);
 		t.deepEqual(data.sets, [['one-a', 'two-a'], ['one-b', 'two-b']]);
 
 		t.done();

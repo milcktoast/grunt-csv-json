@@ -10,7 +10,7 @@ exports.generate = {
 			return JSON.parse(contents);
 		}
 
-		t.deepEqual(readJsonFile('sheet-a'), {
+		t.deepEqual(readJsonFile('set-a'), {
 			'some' : {
 				'item' : 'value 1',
 				'other' : {

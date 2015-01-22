@@ -26,8 +26,8 @@ module.exports = function(grunt) {
 					var fileName = path.join(dest, name + '.json');
 					var data = JSON.stringify(set.data);
 
-					grunt.log.ok('Generated ' + fileName);
 					grunt.file.write(fileName, data);
+					grunt.log.writeln('File ' + fileName.cyan + ' created.');
 				});
 
 				end();

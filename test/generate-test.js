@@ -2,7 +2,7 @@ var path = require('path');
 var fs = require('fs');
 
 exports.generate = {
-	'generate json' : function (t) {
+	'generate resources' : function (t) {
 		var destBase = path.join(__dirname, 'dest');
 
 		function readJsonFile(name) {
@@ -10,7 +10,7 @@ exports.generate = {
 			return JSON.parse(contents);
 		}
 
-		t.deepEqual(readJsonFile('set-a'), {
+		t.deepEqual(readJsonFile('resource-a'), {
 			'some' : {
 				'item' : 'value 1',
 				'other' : {
@@ -19,6 +19,18 @@ exports.generate = {
 			},
 			'an' : {
 				'array' : ['0', '1', '2']
+			}
+		});
+
+		t.deepEqual(readJsonFile('resource-b'), {
+			'some' : {
+				'item' : 'value 3',
+				'other' : {
+					'item' : 'value 4'
+				}
+			},
+			'an' : {
+				'array' : ['3', '4', '5']
 			}
 		});
 

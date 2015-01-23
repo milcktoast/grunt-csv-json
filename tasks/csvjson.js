@@ -7,6 +7,9 @@ var defaultOptions = {
 	/*jshint camelcase:false*/
 	parserOptions : {
 		auto_parse : true
+	},
+	processValue : function (key, value) {
+		return value;
 	}
 };
 

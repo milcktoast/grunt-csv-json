@@ -29,5 +29,22 @@ exports.doc = {
 		t.deepEqual(data.sets, [['one-a', 'two-a'], ['one-b', 'two-b']]);
 
 		t.done();
+	},
+
+	'process field values' : function (t) {
+		var doc = CsvDoc.create({
+			processValue : function (key, value) {
+				return value.replace(/\_(\w+)\_/g, '<em>$1</em>');
+			}
+		});
+
+		var data = doc.formatRows([
+			['key', 'resource'],
+			['copy', 'Something with _emphasis_.']
+		]);
+
+		t.equal(data.sets[0][0], 'Something with <em>emphasis</em>.');
+
+		t.done();
 	}
 };

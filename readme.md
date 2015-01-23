@@ -36,7 +36,7 @@ The following CSV document:
 
 Will generate two JSON resources:
 
-```
+```js
 // dest/bob.json
 {
 	"name": "Bob",

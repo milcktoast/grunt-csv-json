@@ -186,7 +186,16 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 
 ## Release History
-0.0.1 : Initial release
+
+### `0.1.0`
+
+* Add support for generating multiple JSON resources per CSV document
+* Add CSV parser options to task config
+* Add field value processing hook to task config
+
+### `0.0.1`
+
+* Initial release
 
 
 [travis-url]: http://travis-ci.org/jpweeks/grunt-csv-json

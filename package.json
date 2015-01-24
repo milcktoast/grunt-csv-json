@@ -1,7 +1,7 @@
 {
   "name": "grunt-csv-json",
   "description": "Generate static JSON from CSV data",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "main": "Gruntfile.js",
   "repository": {
     "type": "git",

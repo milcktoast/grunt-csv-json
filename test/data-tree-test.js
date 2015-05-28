@@ -29,6 +29,19 @@ exports.tree = {
 		t.done();
 	},
 
+	'number value' : function (t) {
+		var tree = DataTree.create();
+		var root = tree.getRoot();
+
+		tree.addValue('a', '1.1');
+		tree.addValue('b', 1.1);
+
+		t.equal(root.a, '1.1');
+		t.equal(root.b, 1.1);
+
+		t.done();
+	},
+
 	'implicit array' : function (t) {
 		var tree = DataTree.create();
 		var root = tree.getRoot();

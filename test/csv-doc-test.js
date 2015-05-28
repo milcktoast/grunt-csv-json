@@ -20,13 +20,13 @@ exports.doc = {
 		var doc = CsvDoc.create();
 		var data = doc.formatRows([
 			['key', 'resource-a', 'resource-b'],
-			['key-one', 'one-a', 'one-b'],
-			['key-two', 'two-a', 'two-b']
+			['key-one', 'one-a', '1.1'],
+			['key-two', 'two-a', 2.1]
 		]);
 
 		t.deepEqual(data.names, ['resource-a', 'resource-b']);
 		t.deepEqual(data.keys, ['key-one', 'key-two']);
-		t.deepEqual(data.sets, [['one-a', 'two-a'], ['one-b', 'two-b']]);
+		t.deepEqual(data.sets, [['one-a', 'two-a'], ['1.1', 2.1]]);
 
 		t.done();
 	},
